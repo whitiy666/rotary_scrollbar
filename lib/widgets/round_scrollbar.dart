@@ -83,7 +83,9 @@ class _RoundScrollbarState extends State<RoundScrollbar> {
       widget.autoHideDuration,
       () {
         if (thisUpdate != _currentHideUpdate) return;
-        setState(() => _isScrollBarVisible = false);
+       if (mounted){
+         setState(() => _isScrollBarVisible = false);
+       }
       },
     );
   }
